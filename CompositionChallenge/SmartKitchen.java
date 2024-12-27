@@ -1,15 +1,15 @@
 package com.io.Java11.CompositionChallenge;
 
 public class SmartKitchen {
-    private CoffeeMaker brewMaster;
-    private Dishwasher dishWasher;
-    private Refrigerator iceBox;
+private CoffeeMaker brewMaster;
+private Dishwasher dishWasher;
+private Refrigerator iceBox;
 
-    public SmartKitchen() {
-        brewMaster = new CoffeeMaker();
-        iceBox = new Refrigerator();
-        dishWasher = new Dishwasher();
-    }
+public SmartKitchen() {
+    brewMaster = new CoffeeMaker();
+    iceBox = new Refrigerator();
+    dishWasher = new Dishwasher();
+}
 
     public CoffeeMaker getBrewMaster() {
         return brewMaster;
@@ -24,15 +24,15 @@ public class SmartKitchen {
     }
 
     public void doKitchenWork() {
-        brewMaster.brewCoffee();
-        dishWasher.doDishes();
-        iceBox.orderFood();
-    }
+    brewMaster.brewCoffee();
+    dishWasher.doDishes();
+    iceBox.orderFood();
+}
 
     public void setKitchenState(boolean coffeeFlag, boolean dishFlag, boolean iceFlag) {
-        brewMaster.setHasWorkToDo(coffeeFlag);
-        dishWasher.setHasWorkToDo(dishFlag);
-        iceBox.setHasWorkToDo(iceFlag);
+    brewMaster.setHasWorkToDo(coffeeFlag);
+    dishWasher.setHasWorkToDo(dishFlag);
+    iceBox.setHasWorkToDo(iceFlag);
     }
 }
 
