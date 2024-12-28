@@ -45,10 +45,17 @@ public class SortedArrayChallenge {
         printArray(sortedArray);
     }
 
+    /**
+     * Prompts the user for an integer of a given length and returns an array of the entered numbers.
+     * @param length the number of elements in the array
+     * @return an array of integers
+     */
     public static int[] getIntegers(int length) {
         Scanner input = new Scanner(System.in);
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
+            // Prompt the user for an integer
+            System.out.println("Enter number " + (i + 1) + ": ");
             array[i] = input.nextInt();
         }
         return array;
