@@ -1,6 +1,5 @@
 package com.io.Java11.dev.code.Arrays;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinimumElementChallenge {
