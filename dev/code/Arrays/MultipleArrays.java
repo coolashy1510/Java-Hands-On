@@ -25,7 +25,11 @@ public class MultipleArrays {
             System.out.println();
         }*/
 
-        //System.out.println(Arrays.deepToString(array2));
+        System.out.println(Arrays.deepToString(array2));
+
+        array2[1] = new int[] {10,20,30};
+
+        System.out.println(Arrays.deepToString(array2));
 
     }
 }
