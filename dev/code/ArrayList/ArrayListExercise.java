@@ -14,7 +14,8 @@ public class ArrayListExercise {
         System.out.println("Before modifying the list : "+ arrayList);
 
         ArrayList anotherNewlist = new ArrayList(List.of("mangoes", "banana"));
-        arrayList.add(anotherNewlist);
+        //arrayList.add(anotherNewlist);
+        arrayList.addAll(anotherNewlist);
         System.out.println(anotherNewlist);
         System.out.println("after modifying the list: "+ arrayList);
 
