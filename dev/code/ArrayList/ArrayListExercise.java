@@ -21,5 +21,10 @@ public class ArrayListExercise {
 
         arrayList.add("kiwi");
         System.out.println("after modifying the list with kiwi: "+ arrayList);
+        System.out.println("Index of Kiwi: "+ arrayList.indexOf("kiwi"));
+        System.out.println("Last Known Index of Mangoes: "+ arrayList.lastIndexOf("mangoes"));
+
+        arrayList.remove("kiwi");
+        System.out.println("after removing kiwi: "+ arrayList);
     }
 }
