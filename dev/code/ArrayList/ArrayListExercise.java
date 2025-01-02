@@ -10,8 +10,7 @@ public class ArrayListExercise {
 
         List<String> newList = List.of(items);
 
-        ArrayList arrayList = new ArrayList<>();
-        arrayList.add(newList);
+        ArrayList arrayList = new ArrayList<>(newList);
         System.out.println("Before modifying the list : "+ arrayList);
 
         ArrayList anotherNewlist = new ArrayList(List.of("mangoes", "banana"));
