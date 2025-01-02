@@ -54,6 +54,7 @@ public class DescendingSort {
                 }
             }
         }
+
         // Return the sorted array
         return sortedArray;
     }
