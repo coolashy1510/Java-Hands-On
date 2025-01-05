@@ -1,6 +1,7 @@
 package com.io.Java11.dev.code.LinkedList;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class LinkedListExercise {
     public static void main(String[] args) {
@@ -14,8 +15,14 @@ public class LinkedListExercise {
         addElements(linkedList);
         System.out.println("Added Elements: " + linkedList);
 
-        removeElements(linkedList);
-        System.out.println("Removed Elements: " + linkedList);
+     //   removeElements(linkedList);
+      //  System.out.println("Removed Elements: " + linkedList);
+
+        //gettingElements(linkedList);
+
+        //printItinerary(linkedList);
+        //printItinerary2(linkedList);
+        printItinerary3(linkedList);
     }
 
     private static void addElements(LinkedList<String> linkedList) {
@@ -70,5 +77,53 @@ public class LinkedListExercise {
 
         boolean b = linkedList.removeFirstOccurrence("Mumbai"); // removes the first occurrence
         System.out.println(b);
+    }
+
+    private static void gettingElements(LinkedList<String> linkedList) {
+        System.out.println(linkedList.get(3));
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.getLast());
+
+        System.out.println(linkedList.indexOf("Pune"));
+
+        System.out.println(linkedList.lastIndexOf("Pondicherry"));
+
+        System.out.println(linkedList.peek());
+        System.out.println(linkedList.peekFirst());
+        System.out.println(linkedList.peekLast());
+    }
+
+    public static void printItinerary(LinkedList<String> linkedList) {
+        System.out.println("Trip stats at " + linkedList.getFirst());
+
+        for (int i =1; i < linkedList.size(); i++) {
+            System.out.println(linkedList.get(i-1)+ " -> " + linkedList.get(i));
+        }
+        System.out.println("Trip ends at " + linkedList.getLast());
+    }
+
+    public static void printItinerary2(LinkedList<String> linkedList) {
+        System.out.println("Trip stats at " + linkedList.getFirst());
+
+        String previousTown = linkedList.getFirst();
+        for (String town : linkedList) {
+            System.out.println(previousTown + " -> " + town);
+            previousTown = town;
+        }
+        System.out.println("Trip ends at " + linkedList.getLast());
+    }
+
+    public static void printItinerary3(LinkedList<String> linkedList) {
+        System.out.println("Trip stats at " + linkedList.getFirst());
+
+        String previousTown = linkedList.getFirst();
+
+        ListIterator<String> iterator = linkedList.listIterator(1);
+        while (iterator.hasNext()) {
+            var town = iterator.next();
+            System.out.println(previousTown + " -> " + town);
+            previousTown = town;
+        }
+        System.out.println("Trip ends at " + linkedList.getLast());
     }
 }
