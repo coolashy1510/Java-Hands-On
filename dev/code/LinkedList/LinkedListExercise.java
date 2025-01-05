@@ -1,5 +1,6 @@
 package com.io.Java11.dev.code.LinkedList;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -22,7 +23,10 @@ public class LinkedListExercise {
 
         //printItinerary(linkedList);
         //printItinerary2(linkedList);
-        printItinerary3(linkedList);
+        //printItinerary3(linkedList);
+
+        //testIterator(linkedList);
+        testListIterator(linkedList);
     }
 
     private static void addElements(LinkedList<String> linkedList) {
@@ -125,5 +129,41 @@ public class LinkedListExercise {
             previousTown = town;
         }
         System.out.println("Trip ends at " + linkedList.getLast());
+    }
+
+    private static void testIterator(LinkedList<String> linkedList) {
+        Iterator<String> iterator = linkedList.iterator();
+        while (iterator.hasNext()) {
+            //System.out.println(iterator.next());
+            if(iterator.next().equals("Pune")) {
+                iterator.remove();
+            }
+        }
+        System.out.println(linkedList);
+    }
+
+    private static void testListIterator(LinkedList<String> linkedList) {
+        ListIterator<String> iterator = linkedList.listIterator();
+        while (iterator.hasNext()) {
+            //System.out.println(iterator.next());
+            if(iterator.next().equals("Pune")) {
+                iterator.add("Agra");
+            }
+        }
+
+        // below while loop doesnt execute as the pointer
+        // is already at the end of the execution
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        while (iterator.hasPrevious()) {
+            System.out.println(iterator.previous());
+        }
+
+        System.out.println(linkedList);
+
+        var iterator2 = linkedList.listIterator(3);
+        System.out.println(iterator2.previous());
     }
 }
