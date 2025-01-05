@@ -12,6 +12,38 @@ public class MobilePhone {
     }
 
     /**
+     * Find the position of the contact in the contact list.
+     *
+     * @param contact the contact to search for
+     * @return the position of the contact in the list, or -1 if the contact was not found
+     */
+    private int findContact(Contact contact) {
+        // Use the indexOf() method to find the position of the contact in the list
+        return myContacts.indexOf(contact);
+    }
+
+    /**
+     * Find the position of the contact in the contact list using the contact's name.
+     *
+     * @param contactName the name of the contact to search for
+     * @return the position of the contact in the list, or -1 if the contact was not found
+     */
+    private int findContact(String contactName) {
+
+        // Iterate over the elements in the list
+        for (int i = 0; i < myContacts.size(); i++) {
+            Contact contact = myContacts.get(i);
+            // Check if the contact's name matches the contactName
+            if (contact.getName().equals(contactName)) {
+                // Return the position of the contact
+                return i;
+            }
+        }
+        // Return -1 if the contact was not found
+        return -1;
+    }
+
+    /**
      * Adds a new contact to the contact list.
      *
      * @param contact the contact to be added
@@ -73,38 +105,6 @@ public class MobilePhone {
         this.myContacts.remove(foundPosition);
         System.out.println(contact.getName() + ", was deleted.");
         return true;
-    }
-
-    /**
-     * Find the position of the contact in the contact list.
-     *
-     * @param contact the contact to search for
-     * @return the position of the contact in the list, or -1 if the contact was not found
-     */
-    private int findContact(Contact contact) {
-        // Use the indexOf() method to find the position of the contact in the list
-        return myContacts.indexOf(contact);
-    }
-
-    /**
-     * Find the position of the contact in the contact list using the contact's name.
-     *
-     * @param contactName the name of the contact to search for
-     * @return the position of the contact in the list, or -1 if the contact was not found
-     */
-    private int findContact(String contactName) {
-
-        // Iterate over the elements in the list
-        for (int i = 0; i < myContacts.size(); i++) {
-            Contact contact = myContacts.get(i);
-            // Check if the contact's name matches the contactName
-            if (contact.getName().equals(contactName)) {
-                // Return the position of the contact
-                return i;
-            }
-        }
-        // Return -1 if the contact was not found
-        return -1;
     }
 
     /**
