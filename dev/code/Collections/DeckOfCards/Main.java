@@ -117,5 +117,43 @@ public class Main {
         // Print the deck sorted by rank and suit, but in reversed order
         Card.printDeck(deck, "Sorted by rank, suit reversed", 13);
 
+        // Get the Kings cards from the deck
+        List<Card> kings = new ArrayList<>(deck.subList(4, 8));
+        Card.printDeck(kings, "Kings in deck", 1);
+
+        // Get the tens cards from the deck
+        List<Card> tens = new ArrayList<>(deck.subList(16,20));
+        Card.printDeck(tens, "Tens in the deck", 1);
+
+
+        // Find the index of the first element in the tens list within the deck
+        // This could be used to find the index of a sublist within a larger list
+        int subListIndex = Collections.indexOfSubList(deck, tens);
+        // The output of this could be used to find the index of a sublist
+        // The parameters are the list to search and the sublist to search for
+        // The return value is the index of the first element in the sublist
+        // If the sublist is not found, the return value is -1
+
+        System.out.println("sublist index of tens = " + subListIndex);
+        System.out.println("Contains = "+ deck.containsAll(tens));
+
+        // Check if two lists have any elements in common
+        // The disjoint method takes two collections as parameters
+        // If the two collections have no elements in common, the method returns true
+        // If they do have elements in common, the method returns false
+        // The disjoint method is a static method of the Collections class
+        boolean disjoint = Collections.disjoint(deck, tens);
+        System.out.println("disjoint = " + disjoint);
+
+        // Check if two lists have any elements in common
+        // The disjoint method takes two collections as parameters
+        // If the two collections have no elements in common, the method returns true
+        // If they do have elements in common, the method returns false
+        // The disjoint method is a static method of the Collections class
+        boolean disjoint2 = Collections.disjoint(kings, tens);
+        System.out.println("disjoint2 = " + disjoint2);
+
+
+
     }
 }
