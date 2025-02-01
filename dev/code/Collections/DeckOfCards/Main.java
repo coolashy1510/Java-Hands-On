@@ -1,9 +1,6 @@
 package com.io.Java11.dev.code.Collections.DeckOfCards;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     /**
@@ -87,5 +84,38 @@ public class Main {
 
         // Print the immutable list copy of 'Kings of Clubs'
         Card.printDeck(cards, "List Copy of Kings", 1);
+
+        // Get the standard deck of cards
+        List<Card> deck = Card.getStandardDeck();
+        // Print the standard deck
+        Card.printDeck(deck);
+
+        // Shuffle the deck of cards
+        Collections.shuffle(deck);
+        // Print the shuffled deck
+        Card.printDeck(deck, "Shuffled Deck", 4);
+
+        // Reverse the deck of cards
+        Collections.reverse(deck);
+        // Print the reversed deck
+        Card.printDeck(deck, "Reversed Deck", 4);
+
+        // Create a comparator to sort cards by rank, then by suit
+        Comparator<Card> sortingAlgorithm = Comparator
+                .comparing(Card::rank) // Compare by rank first
+                .thenComparing(Card::suit); // If ranks are equal, compare by suit
+
+        // Sort the deck of cards using the defined comparator
+        Collections.sort(deck, sortingAlgorithm);
+
+        // Print the deck sorted by rank and suit
+        Card.printDeck(deck, "Standard Deck sorted by rank suit", 13);
+
+        // Reverse the order of the sorted deck
+        Collections.reverse(deck);
+
+        // Print the deck sorted by rank and suit, but in reversed order
+        Card.printDeck(deck, "Sorted by rank, suit reversed", 13);
+
     }
 }
